@@ -6,7 +6,7 @@ services:
   - docker build -t andiibot/react-test -f ./client/Dockerfile.dev ./client
   
  script: 
-  - docker run -r CI=true andiibot/react-test npm test
+  - docker run -e CI=true andiibot/react-test npm test
 
  after_succes:
   - docker build -t andiibot/multi-client ./client
