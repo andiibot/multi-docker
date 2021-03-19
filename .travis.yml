@@ -2,23 +2,23 @@ sudo: required
 services: 
  - docker
 
- before_install:
-  - docker build -t andiibot/react-test -f ./client/Dockerfile.dev ./client
+before_install:
+ - docker build -t andiibot/react-test -f ./client/Dockerfile.dev ./client
   
- script: 
-  - docker run -e CI=true andiibot/react-test npm test
+script: 
+ - docker run -e CI=true andiibot/react-test npm test
 
- after_succes:
-  - docker build -t andiibot/multi-client ./client
-  - docker build -t andiibot/multi-nginx ./nginx
-  - docker build -t andiibot/multi-server ./server
-  - docker build -t andiibot/multi-worker ./worker
+after_succes:
+ - docker build -t andiibot/multi-client ./client
+ - docker build -t andiibot/multi-nginx ./nginx
+ - docker build -t andiibot/multi-server ./server
+ - docker build -t andiibot/multi-worker ./worker
 
-  #Log in to Docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#Log in to Docker CLI
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  #Take images and push them to Docker Hub
-  - docker push andiibot/multi-client
-  - docker push andiibot/multi-nginx
-  - docker push andiibot/multi-server
-  - docker push andiibot/multi-worker
+#Take images and push them to Docker Hub
+ - docker push andiibot/multi-client
+ - docker push andiibot/multi-nginx
+ - docker push andiibot/multi-server
+ - docker push andiibot/multi-worker
