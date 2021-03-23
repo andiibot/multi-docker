@@ -1,0 +1,10 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions":[
+    {
+      "name": "client",
+      "image": "andiibot/multi-client",
+      "hostname ": "client"
+    }
+  ]
+}
