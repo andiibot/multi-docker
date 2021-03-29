@@ -23,7 +23,7 @@ after_succes:
  - docker push andiibot/multi-server
  - docker push andiibot/multi-worker
 
- deploy:
+deploy:
   provider: elasticbeanstalk
   region: us-east-2
   app: multi-docker
