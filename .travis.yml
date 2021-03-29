@@ -22,3 +22,16 @@ after_succes:
  - docker push andiibot/multi-nginx
  - docker push andiibot/multi-server
  - docker push andiibot/multi-worker
+
+ deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-us-east-2-953530071595
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_accesss_key:
+    secure: $AWS_SECRET_KEY

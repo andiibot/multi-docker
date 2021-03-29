@@ -4,7 +4,31 @@
     {
       "name": "client",
       "image": "andiibot/multi-client",
-      "hostname ": "client"
+      "hostname ": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "andiibot/multi-server",
+      "hostname ": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "andiibot/multi-worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "andiibot/multi-nginx",      
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
     }
   ]
 }
