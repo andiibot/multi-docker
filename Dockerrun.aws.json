@@ -24,7 +24,7 @@
     {
       "name": "nginx",
       "image": "andiibot/multi-nginx",      
-      "essential": true,
+      "essential": false,
       "memory": 128,
       "portMappings": [
         {
