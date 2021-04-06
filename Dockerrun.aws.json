@@ -12,7 +12,7 @@
       "name": "server",
       "image": "andiibot/multi-server",
       "hostname ": "api",
-      "essential": true,
+      "essential": false,
       "memory": 128
     },
     {
@@ -23,8 +23,9 @@
     },
     {
       "name": "nginx",
-      "image": "andiibot/multi-nginx",      
-      "essential": false,
+      "image": "andiibot/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
       "memory": 128,
       "portMappings": [
         {
