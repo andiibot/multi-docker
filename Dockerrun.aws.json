@@ -18,8 +18,8 @@
     {
       "name": "worker",
       "image": "andiibot/multi-worker",
-      "essential": false,
       "hostname": "worker",
+      "essential": false,      
       "memory": 128
     },
     {
