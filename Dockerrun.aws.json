@@ -1,17 +1,17 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "containerDefinitions":[
+  "containerDefinitions": [
     {
       "name": "client",
       "image": "andiibot/multi-client",
-      "hostname ": "client",
+      "hostname": "client",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
       "image": "andiibot/multi-server",
-      "hostname ": "api",
+      "hostname": "api",
       "essential": false,
       "memory": 128
     },
@@ -19,14 +19,14 @@
       "name": "worker",
       "image": "andiibot/multi-worker",
       "hostname": "worker",
-      "essential": false,      
+      "essential": false,
       "memory": 128
     },
     {
       "name": "nginx",
       "image": "andiibot/multi-nginx",
       "hostname": "nginx",
-      "essential": true,      
+      "essential": true,
       "portMappings": [
         {
           "hostPort": 80,
