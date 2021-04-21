@@ -11,7 +11,7 @@
     {
       "name": "server",
       "image": "andiibot/multi-server",
-      "hostname ": "api",
+      "hostname ": "apix",
       "essential": false,
       "memory": 128
     },
